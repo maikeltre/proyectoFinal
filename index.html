@@ -58,9 +58,10 @@
     <!--------- Header ----------->
 
     <header class="header">
-        <h2 class="header__title">planea tu aventura</h2>
-
-        <a class="botton-comprar" href="#">comprar ahora</a>
+        <div class="header__contenido">
+            <h2 class="header__title">planea tu aventura</h2>
+            <a class="botton-comprar" href="#">comprar ahora</a>
+        </div>
         <a href="#main">
             <svg class="header__arrow" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-down" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
                 <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -168,7 +169,7 @@
                     <textarea class="campo__input campo__input--textarea" placeholder="Escribe tu mensaje aquí..."></textarea>
                 </div>
                 <div class="campo">
-                    <input type="submit" value="Enviar">
+                    <input class="formulario__btn" type="submit" value="Enviar">
                 </div>
             </form>
 

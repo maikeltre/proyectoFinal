@@ -1,208 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Required meta tags -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ELPOLONORTE</title>
+
+    <!--Page CSS-->
     <link rel="stylesheet" href="/css/styles.css">
+
+    <!--Font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text&display=swap" rel="stylesheet">
+        
+    <title>ELPOLONORTE</title>
 </head>
+
 <body>
     <!--------- Barra de Navegacion ----------->
-    <div>
-        <nav class="navegacion bg">
+
+    <nav class="navegacion">
+
+        <a class="logo__enlace" href="index.html">
             <h1 class="logo"><span>el</span> polonorte</h1>
+        </a>
+        <div class="menuToggle" onclick="ToggleMenu();"></div>
+
+
+        <div class="contenedor__enlaces">
 
             <ul class="enlaces">
                 <li><a class="enlace enlace--page" href="#">inicio</a></li>
-                <li><a class="enlace" href="#">comprar</a></li>
-                <li><a class="enlace" href="#">sobre nosotros</a></li>
-                <li><a class="enlace" href="#">contacto</a></li>
-                <li></li><a class="enlace" href="#"><img src="/img/cart.png" alt="carritoCompras"></a></li>
+
+                <li class="enlace__productos">
+                    <a class="enlace" href="productos.html">comprar</a>
+                    <div id="enlaces__productos">
+
+                        <a class="enlace enlace--producto" href="mochilas.html">mochilas</a>
+                        <a class="enlace enlace--producto" href="bolsosLona.html">bolsos de lona</a>
+                        <a class="enlace enlace--producto" href="bolsosViaje.html">bolsos de viaje</a>
+
+                    </div>
+                </li>
+
+                <li><a class="enlace" href="#informacion">sobre nosotros</a></li>
+                <li><a class="enlace" href="#formulario__contenedor">contacto</a></li>
             </ul>
-        </nav>
-            <div class=" navegacion--redes">
-                <div class="redes bg">
-                    <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
-                        </svg>
-                    </a>
-                </div>
-                <div class="redes bg">
-                    <a href="#">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                            <rect x="4" y="4" width="16" height="16" rx="4" />
-                            <circle cx="12" cy="12" r="3" />
-                            <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
-                        </svg>
-                    </a>
-                </div>
+        </div>
+
+        <div class="submenu" onclick="submenu();">
+            <div id="carrito">
+
+                <table id="lista-carrito">
+                    <thead>
+                        <tr>
+                            <th>Imagen</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                        </tr>
+                    </thead>
+                </table>
+                <a href="#" id="vaciar-carrito" class="boton--vaciar">Vaciar carrito</a>
+
+            </div>
+        </div>
+
+        <div class=" navegacion--redes">
+            <div class="redes ">
                 <a href="#">
-                    <div class="redes bg">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook" width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter"
+                        width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="redes ">
+                <a href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-instagram"
+                        width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <rect x="4" y="4" width="16" height="16" rx="4" />
+                        <circle cx="12" cy="12" r="3" />
+                        <line x1="16.5" y1="7.5" x2="16.5" y2="7.501" />
+                    </svg>
+                </a>
+            </div>
+            <div class="redes ">
+                    <a href="#">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-facebook"
+                            width="36" height="36" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3" />
                         </svg>
-                </a>
-                </div>
+                    </a>
             </div>
-</div>
+        </div>
+    </nav>
 
     <!--------- Header ----------->
 
-    <header class="header">
+    <header id="header">
         <div class="header__contenido">
             <h2 class="header__title">planea tu aventura</h2>
-            <a class="botton-comprar" href="#">comprar ahora</a>
+            <a class="botton-comprar" href="productos.html">comprar ahora</a>
         </div>
         <a href="#main">
-            <svg class="header__arrow" xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-down" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <svg class="header__arrow" xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-arrow-down" width="44" height="44" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="18" y1="13" x2="12" y2="19" />
                 <line x1="6" y1="13" x2="12" y2="19" />
             </svg>
         </a>
-        </header>
-        
+        <div class="contenedor__boton">
+            <a href="#header" id="boton__top">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-arrow-up" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ffffff" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="12" y1="5" x2="12" y2="19" />
+                    <line x1="18" y1="11" x2="12" y2="5" />
+                    <line x1="6" y1="11" x2="12" y2="5" />
+                  </svg>
+            </a>
+        </div>
+    </header>
+
     <!--------- main ----------->
 
-        <main id="main"> 
-            <div class="principal">
-                <div class="principal__titulo">
-                    <h3>recien llegados</h3>
-                    <a class="botton-comprar" href="#">comprar ahora</a>
+    <main id="main">
+        <div class="principal">
+            <div class="principal__titulo">
+                <h3>recien llegados</h3>
+                <a class="botton-comprar" href="productos.html">comprar ahora</a>
+            </div>
+            <img class="principal__img" src="/img/principal.jpg" alt="productoPrincipal">
+        </div>
+        <div class="entradas__titulo margin">
+            <h3>productos</h3>
+        </div>
+        <div class="entradas">
+            <div class="entrada">
+                <img class="entrada__img" src="/img/mochila.jpg" alt="mochila">
+                <a class="entrada__enlace" href="mochilas.html">mochila</a>
+            </div>
+            <!--Entrada-->
+
+            <div class="entrada">
+                <img class="entrada__img" src="/img/bolso de lona.jpg" alt="bolso de lona">
+                <a class="entrada__enlace" href="bolsosLona.html">bolsos de lona</a>
+            </div>
+            <!--Entrada-->
+
+            <div class="entrada">
+                <img class="entrada__img" src="/img/bolso de viaje.jpg" alt="bolso de viaje">
+                <a class="entrada__enlace" class="" href="bolsosViaje.html">bolsos de viaje</a>
+            </div>
+            <!--Entrada-->
+        </div>
+    </main>
+
+    <!--------- productos ----------->
+
+    <section class="productos alinear-texto">
+        <h3 class="productos__titulo margin">ahora en ofertas</h3>
+        <p class="productos__texto">hasta 50% off</p>
+
+        <div class="productos__contenedor ">
+            <div class="producto">
+                <img class="producto__img producto__img--lona producto__img--top" src="/img/producto_lona.png"
+                    alt="bolso lona">
+                <div class="producto__informacion">
+                    <h4>mochila </h4>
+                    <p class="tachado">$95.00</p>
+                    <p>$76.50</p>
+                    <a class="producto__enlace" href="mochilas.html">Ver detalles</a>
                 </div>
-                <img class="principal__img" src="/img/principal.jpg" alt="productoPrincipal">
             </div>
 
-            <div class="entradas">
-                <div class="entrada">
-                    <img class="entrada__img" src="/img/mochila.jpg" alt="mochila">
-                    <a class="entrada__enlace" href="#">mochila</a>
-                </div><!--Entrada-->
-
-                <div class="entrada">
-                    <img class="entrada__img" src="/img/bolso de lona.jpg" alt="bolso de lona">
-                    <a class="entrada__enlace" href="#">bolsos de lona</a>
-                </div><!--Entrada-->
-
-                <div class="entrada">
-                    <img class="entrada__img" src="/img/bolso de viaje.jpg" alt="bolso de viaje">
-                    <a class="entrada__enlace" class="" href="#">bolsos de viaje</a>
-                </div><!--Entrada-->
+            <div class="producto">
+                <img class="producto__img producto__img--viaje" src="/img/producto_viaje.png" alt="bolso de viaje">
+                <div class="producto__informacion">
+                    <h4>mochila de viaje</h4>
+                    <p class="tachado">$95.00</p>
+                    <p>$76.50</p>
+                    <a class="producto__enlace" href="bolsosLona.html">Ver detalles</a>
+                </div>
             </div>
-        </main>
-        
-   <!--------- productos ----------->
 
-        <section class="productos alinear-texto">
-            <h3 class="productos__titulo margin">ahora en ofertas</h3>
-            <p class="productos__texto">hasta 50% off</p>
-
-            <div class="productos__contenedor ">
-                <div class="producto">
-                    <img class="producto__img producto__img--lona producto__img--top" src="/img/producto_lona.png" alt="bolso lona">
-                    <div class="producto__informacion">
-                        <h4>mochila camuflada</h4>
-                        <p class="tachado">$95.00</p>
-                        <p>$76.50</p>
-                        <a class="producto__enlace" href="#">Ver detalles</a>
-                    </div>
-                </div> 
-
-                <div class="producto">
-                    <img class="producto__img producto__img--viaje" src="/img/producto_viaje.png" alt="bolso de viaje">
-                    <div class="producto__informacion">
-                        <h4>mochila camuflada</h4>
-                        <p class="tachado">$95.00</p>
-                        <p>$76.50</p>
-                        <a class="producto__enlace" href="#">Ver detalles</a>
-                    </div>
-                </div> 
-
-                <div class="producto">
-                    <img class="producto__img producto__img--top" src="/img/producto_camuflaje.png" alt="bolso camuflado">
-                    <div class="producto__informacion">
-                        <h4>mochila camuflada</h4>
-                        <p class="tachado">$95.00</p>
-                        <p>$76.50</p>
-                        <a class="producto__enlace" href="#">Ver detalles</a>
-                    </div>
-                </div> 
-            </div>
-            
-        </section> <!--Productos-->
-
-
-     <!--------- informacion ----------->
-
-        <div class="informacion">
-            <div class="informacion__contenedor bg">
-                <h3>sobre nosotros</h3>
-                <p class="texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam eum assumenda facere in architecto doloremque aperiam fugiat, quia vitae voluptates beatae. Iure harum omnis ea? Corrupti rem commodi ut necessitatibus!</p>
+            <div class="producto">
+                <img class="producto__img producto__img--top" src="/img/producto_camuflaje.png" alt="bolso camuflado">
+                <div class="producto__informacion">
+                    <h4>mochila camuflada</h4>
+                    <p class="tachado">$95.00</p>
+                    <p>$76.50</p>
+                    <a class="producto__enlace" href="bolsosViaje.html">Ver detalles</a>
+                </div>
             </div>
         </div>
+
+    </section>
+    <!--Productos-->
+
+
+    <!--------- Sobre nosotros ----------->
+
+    <div id="informacion">
+        <div class="informacion__contenedor bg">
+            <h3>sobre nosotros</h3>
+            <p class="texto">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam eum assumenda facere in
+                architecto doloremque aperiam fugiat, quia vitae voluptates beatae. Iure harum omnis ea? Corrupti rem
+                commodi ut necessitatibus!</p>
+        </div>
+    </div>
 
 
     <!--------- Formulario ----------->
 
-        <div class="formulario__contenedor">
-            <form class="formulario">
-                <div class="campo">
-                    <input class="campo__input" type="text" placeholder="Nombre">
-                </div>
-                <div class="campo">
-                    <input class="campo__input" type="email" placeholder="Email">
-                </div>
-                <div class="campo">
-                    <input class="campo__input" type="number" placeholder="Teléfono">
-                </div>
-                <div class="campo">
-                    <textarea class="campo__input campo__input--textarea" placeholder="Escribe tu mensaje aquí..."></textarea>
-                </div>
-                <div class="campo">
-                    <input class="formulario__btn" type="submit" value="Enviar">
-                </div>
-            </form>
-
-            <div class="formulario__informacion">
-                <h3>contacto</h3>
-                <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos architecto harum aut voluptas maxime minus?</p>
-                <p class="texto">elpolonorte@gmail.com</p>
-                <p class="texto">Tel: 914-123-456</p>
+    <div id="formulario__contenedor">
+        <form class="formulario">
+            <div class="campo">
+                <input class="campo__input" type="text" placeholder="Nombre">
             </div>
-        </div>
+            <div class="campo">
+                <input class="campo__input" type="email" placeholder="Email">
+            </div>
+            <div class="campo">
+                <input class="campo__input" type="number" placeholder="Teléfono">
+            </div>
+            <div class="campo">
+                <textarea class="campo__input campo__input--textarea"
+                    placeholder="Escribe tu mensaje aquí..."></textarea>
+            </div>
+            <div class="campo">
+                <input class="formulario__btn" type="submit" value="Enviar">
+            </div>
+        </form>
 
-        
+        <div class="formulario__informacion">
+            <h3>contacto</h3>
+            <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos architecto harum aut voluptas
+                maxime minus?</p>
+            <p class="texto">elpolonorte@gmail.com</p>
+            <p class="texto">Tel: 914-123-456</p>
+        </div>
+    </div>
+
+
     <!--------- Registro en la base de datos ----------->
 
-        <div class="registro">
-            <div class="registro__titulos">
-                <h3 class="margin">Únete a nuestra base de datos</h3>
-                <h4 class="margin">y nunca te quedes afuera</h4>
-            </div>
-
-            <div class="registro__campos">
-                <input class="registro__input" type="text" placeholder="Ingresa tu email aqui">
-                <button>Unirme</button>
-            </div>
+    <div class="registro">
+        <div class="registro__titulos">
+            <h3 class="margin">Únete a nuestra base de datos</h3>
+            <h4 class="margin">y nunca te quedes afuera</h4>
         </div>
 
+        <div class="registro__campos">
+            <input class="registro__input registro__input--email" type="text" placeholder="Ingresa tu email aqui">
+            <button class="registro__input registro__input--btn">Unirme</button>
+        </div>
+    </div>
 
-     <!--------- footer ----------->
 
-        <footer>
-            <p>©hecho para POLONORTE.Proyeto</p>
-        </footer>
+    <!--------- footer ----------->
 
-    <script src="/scripts.js"></script>
+    <footer class="footer">
+        <p>©hecho para POLONORTE.Proyecto</p>
+    </footer>
+
+
+    <!--Page-script-->
+    <script src="/js/scripts.js"></script>
 </body>
+
 </html>

@@ -45,6 +45,7 @@ function agregarProducto(e) {
 
 //Elimina un curso del carrito
 function eliminarCurso(e) {
+    e.preventDefault();
     if (e.target.classList.contains('borrar-curso')) {
         const cursoId = e.target.getAttribute('data-id')
 
@@ -121,11 +122,14 @@ function carritoHTML() {
 
 function ToggleMenu() {
     menuToggle.classList.toggle('active');
-    enlaces.classList.toggle('active')
+    enlaces.classList.toggle('active');
 }
 
 function submenu() {
-    carritoSubmenu.classList.toggle('active');
+    carritoSubmenu.onclick = function() {
+        carritoSubmenu.classList.toggle('active');
+        carrito.classList.toggle('active');
+    }
 
 }
 

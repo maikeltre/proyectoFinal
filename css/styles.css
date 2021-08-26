@@ -298,7 +298,7 @@ a {
 .submenu.active{
     background-image: url(/img/card_hover.png);
 }
-.submenu #carrito{
+ #carrito{
     display: block;
     position: fixed;
     top:0%;
@@ -310,10 +310,10 @@ a {
     padding: 10px;
     min-height: 400px;
     min-width: 200px;
-    transition: .5s ease;
+    transition: .7s ease;
     overflow-y:scroll;
 }
-.submenu.active #carrito{
+ #carrito.active{
     left: 0%;
 }
 @media (max-width: 560px) {
@@ -321,12 +321,12 @@ a {
         grid-column: 2 / 3;
         grid-row: 3 / 4;
     }
-    .submenu #carrito{
+    #carrito{
         transition: .5s ease;
         top:16%;
         height: 80vh;
     }
-    .submenu.active #carrito{
+    #carrito.active{
         z-index:5;
         background-color: var(--blanco);
         padding: 10px;
@@ -334,7 +334,7 @@ a {
         min-width: 18.75em;
         top:18%;
         left: 0%;
-        transition: .1;
+        transition: .1 ease;
     }
 }
 
